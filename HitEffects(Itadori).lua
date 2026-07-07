@@ -85,7 +85,7 @@ if enabled and LocalPlayer then
                         l1.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0,0,0),NumberSequenceKeypoint.new(0.661,0,0),NumberSequenceKeypoint.new(1,1,0)})
                         l1.ZOffset = 2
                         l1.EmissionDirection = Enum.NormalId.Top
-                        l1.Lifetime = NumberRange.new(0.15,0.3)
+                        l1.Lifetime = NumberRange.new(0.1,0.2)
                         l1.Rate = 100
                         l1.Speed = NumberRange.new(0.001,10)
                         l1.Rotation = NumberRange.new(0,360)
@@ -100,6 +100,7 @@ if enabled and LocalPlayer then
                         l1.FlipbookFramerate = NumberRange.new(20,40)
                         l1.FlipbookLayout = Enum.ParticleFlipbookLayout.Grid4x4
                         l1.Brightness = 5
+                        l1.Enabled = false
                         l1:Emit(50)
 
                         local s1 = Instance.new("ParticleEmitter", attachTarget)
@@ -108,7 +109,7 @@ if enabled and LocalPlayer then
                         s1.Color = ColorSequence.new(Color3.new(1,0,0))
                         s1.Size = NumberSequence.new({NumberSequenceKeypoint.new(0,2,1),NumberSequenceKeypoint.new(1,0,0)})
                         s1.EmissionDirection = Enum.NormalId.Front
-                        s1.Lifetime = NumberRange.new(0.7)
+                        s1.Lifetime = NumberRange.new(0.35)
                         s1.Rate = 400
                         s1.Speed = NumberRange.new(20,150)
                         s1.Rotation = NumberRange.new(0,360)
@@ -121,6 +122,7 @@ if enabled and LocalPlayer then
                         s1.ShapeInOut = Enum.ParticleEmitterShapeInOut.Outward
                         s1.ShapeStyle = Enum.ParticleEmitterShapeStyle.Volume
                         s1.Brightness = 15
+                        s1.Enabled = false
                         s1:Emit(50)
 
                         local s2 = Instance.new("ParticleEmitter", attachTarget)
@@ -129,7 +131,7 @@ if enabled and LocalPlayer then
                         s2.Color = ColorSequence.new(Color3.new(1,0,0))
                         s2.Size = NumberSequence.new({NumberSequenceKeypoint.new(0,2,1),NumberSequenceKeypoint.new(1,0,0)})
                         s2.EmissionDirection = Enum.NormalId.Front
-                        s2.Lifetime = NumberRange.new(0.2,0.4)
+                        s2.Lifetime = NumberRange.new(0.1,0.2)
                         s2.Rate = 100
                         s2.Speed = NumberRange.new(80,150)
                         s2.Rotation = NumberRange.new(90,90)
@@ -142,6 +144,7 @@ if enabled and LocalPlayer then
                         s2.ShapeStyle = Enum.ParticleEmitterShapeStyle.Volume
                         s2.FlipbookMode = Enum.ParticleFlipbookMode.Loop
                         s2.Brightness = 15
+                        s2.Enabled = false
                         s2:Emit(50)
 
                         local w1 = Instance.new("ParticleEmitter", attachTarget)
@@ -151,7 +154,7 @@ if enabled and LocalPlayer then
                         w1.Size = NumberSequence.new(80)
                         w1.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0,0,0),NumberSequenceKeypoint.new(1,1,0)})
                         w1.EmissionDirection = Enum.NormalId.Top
-                        w1.Lifetime = NumberRange.new(0.1)
+                        w1.Lifetime = NumberRange.new(0.05)
                         w1.Rate = 100
                         w1.Speed = NumberRange.new(0.01)
                         w1.Rotation = NumberRange.new(-360,360)
@@ -164,6 +167,7 @@ if enabled and LocalPlayer then
                         w1.ShapeStyle = Enum.ParticleEmitterShapeStyle.Volume
                         w1.FlipbookMode = Enum.ParticleFlipbookMode.Loop
                         w1.Brightness = 3
+                        w1.Enabled = false
                         w1:Emit(50)
                     end
 
@@ -210,12 +214,8 @@ if enabled and LocalPlayer then
                         e3.FlipbookFramerate = NumberRange.new(0.729)
                         e3.FlipbookLayout = Enum.ParticleFlipbookLayout.Grid4x4
                         e3.Brightness = 15
-
-                        local a1 = Instance.new("Attachment", att)
-                        a1.Position = Vector3.new(0, -1.1151411533355713, 0)
-                        table.insert(toClean, a1)
                         
-                        local eAura = Instance.new("ParticleEmitter", a1)
+                        local eAura = Instance.new("ParticleEmitter", att)
                         eAura.Name = "Aura"
                         eAura.Texture = "rbxassetid://9285330517"
                         eAura.Color = ColorSequence.new(Color3.new(0.33725491166114807,0.7137255072593689,1))
