@@ -85,7 +85,7 @@ if enabled and LocalPlayer then
                         l1.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0,0,0),NumberSequenceKeypoint.new(0.661,0,0),NumberSequenceKeypoint.new(1,1,0)})
                         l1.ZOffset = 2
                         l1.EmissionDirection = Enum.NormalId.Top
-                        l1.Lifetime = NumberRange.new(1.3)
+                        l1.Lifetime = NumberRange.new(0.7)
                         l1.Rate = 100
                         l1.Speed = NumberRange.new(0.001,10)
                         l1.Rotation = NumberRange.new(0,360)
@@ -109,7 +109,7 @@ if enabled and LocalPlayer then
                         s1.Color = ColorSequence.new(Color3.new(1,0,0))
                         s1.Size = NumberSequence.new({NumberSequenceKeypoint.new(0,2,1),NumberSequenceKeypoint.new(1,0,0)})
                         s1.EmissionDirection = Enum.NormalId.Front
-                        s1.Lifetime = NumberRange.new(1.3)
+                        s1.Lifetime = NumberRange.new(0.7)
                         s1.Rate = 400
                         s1.Speed = NumberRange.new(20,150)
                         s1.Rotation = NumberRange.new(0,360)
@@ -131,7 +131,7 @@ if enabled and LocalPlayer then
                         s2.Color = ColorSequence.new(Color3.new(1,0,0))
                         s2.Size = NumberSequence.new({NumberSequenceKeypoint.new(0,2,1),NumberSequenceKeypoint.new(1,0,0)})
                         s2.EmissionDirection = Enum.NormalId.Front
-                        s2.Lifetime = NumberRange.new(1.3)
+                        s2.Lifetime = NumberRange.new(0.7)
                         s2.Rate = 100
                         s2.Speed = NumberRange.new(80,150)
                         s2.Rotation = NumberRange.new(90,90)
@@ -154,7 +154,7 @@ if enabled and LocalPlayer then
                         w1.Size = NumberSequence.new(80)
                         w1.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0,0,0),NumberSequenceKeypoint.new(1,1,0)})
                         w1.EmissionDirection = Enum.NormalId.Top
-                        w1.Lifetime = NumberRange.new(1.3)
+                        w1.Lifetime = NumberRange.new(0.7)
                         w1.Rate = 100
                         w1.Speed = NumberRange.new(0.01)
                         w1.Rotation = NumberRange.new(-360,360)
@@ -241,7 +241,7 @@ if enabled and LocalPlayer then
                         eAura:Emit(50)
                     end
 
-                    task.delay(2, function() -- Aumentado a 2 segundos para no cortar el efecto de 1.3s
+                    task.delay(1.5, function()
                         for _, obj in ipairs(toClean) do
                             if obj and obj.Parent then
                                 obj:Destroy()
