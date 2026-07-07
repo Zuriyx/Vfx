@@ -85,7 +85,7 @@ if enabled and LocalPlayer then
                         l1.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0,0,0),NumberSequenceKeypoint.new(0.661,0,0),NumberSequenceKeypoint.new(1,1,0)})
                         l1.ZOffset = 2
                         l1.EmissionDirection = Enum.NormalId.Top
-                        l1.Lifetime = NumberRange.new(0.05, 0.1) -- Reducido para que sea instantáneo
+                        l1.Lifetime = NumberRange.new(1.3)
                         l1.Rate = 100
                         l1.Speed = NumberRange.new(0.001,10)
                         l1.Rotation = NumberRange.new(0,360)
@@ -109,7 +109,7 @@ if enabled and LocalPlayer then
                         s1.Color = ColorSequence.new(Color3.new(1,0,0))
                         s1.Size = NumberSequence.new({NumberSequenceKeypoint.new(0,2,1),NumberSequenceKeypoint.new(1,0,0)})
                         s1.EmissionDirection = Enum.NormalId.Front
-                        s1.Lifetime = NumberRange.new(0.1, 0.15) -- Reducido
+                        s1.Lifetime = NumberRange.new(1.3)
                         s1.Rate = 400
                         s1.Speed = NumberRange.new(20,150)
                         s1.Rotation = NumberRange.new(0,360)
@@ -131,7 +131,7 @@ if enabled and LocalPlayer then
                         s2.Color = ColorSequence.new(Color3.new(1,0,0))
                         s2.Size = NumberSequence.new({NumberSequenceKeypoint.new(0,2,1),NumberSequenceKeypoint.new(1,0,0)})
                         s2.EmissionDirection = Enum.NormalId.Front
-                        s2.Lifetime = NumberRange.new(0.05, 0.1) -- Reducido
+                        s2.Lifetime = NumberRange.new(1.3)
                         s2.Rate = 100
                         s2.Speed = NumberRange.new(80,150)
                         s2.Rotation = NumberRange.new(90,90)
@@ -154,7 +154,7 @@ if enabled and LocalPlayer then
                         w1.Size = NumberSequence.new(80)
                         w1.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0,0,0),NumberSequenceKeypoint.new(1,1,0)})
                         w1.EmissionDirection = Enum.NormalId.Top
-                        w1.Lifetime = NumberRange.new(0.03) -- Reducido
+                        w1.Lifetime = NumberRange.new(1.3)
                         w1.Rate = 100
                         w1.Speed = NumberRange.new(0.01)
                         w1.Rotation = NumberRange.new(-360,360)
@@ -175,7 +175,6 @@ if enabled and LocalPlayer then
                     local rightLimb = character:FindFirstChild("RightHand") or character:FindFirstChild("Right Arm")
                     local handAttachments = {}
 
-                    -- Ajustamos las posiciones exactamente a las puntas de las manos
                     if leftLimb then
                         local attLeft = Instance.new("Attachment", leftLimb)
                         attLeft.CFrame = leftLimb.Name:match("Arm") and CFrame.new(0, -1, 0) or CFrame.new(0, -0.6, 0)
@@ -225,10 +224,10 @@ if enabled and LocalPlayer then
                         eAura.EmissionDirection = Enum.NormalId.Top
                         eAura.Lifetime = NumberRange.new(0.1,0.2)
                         eAura.Rate = 35
-                        eAura.Speed = NumberRange.new(0, 5) -- Aceleración reducida para que no vuele
+                        eAura.Speed = NumberRange.new(0, 5)
                         eAura.Rotation = NumberRange.new(-360,360)
-                        eAura.Acceleration = Vector3.new(0, 2, 0) -- Aceleración reducida
-                        eAura.LockedToPart = true -- Agregado para que no se despegue al moverte
+                        eAura.Acceleration = Vector3.new(0, 2, 0)
+                        eAura.LockedToPart = true
                         eAura.Orientation = Enum.ParticleOrientation.FacingCamera
                         eAura.Shape = Enum.ParticleEmitterShape.Box
                         eAura.ShapeInOut = Enum.ParticleEmitterShapeInOut.Outward
@@ -242,7 +241,7 @@ if enabled and LocalPlayer then
                         eAura:Emit(50)
                     end
 
-                    task.delay(1, function()
+                    task.delay(2, function() -- Aumentado a 2 segundos para no cortar el efecto de 1.3s
                         for _, obj in ipairs(toClean) do
                             if obj and obj.Parent then
                                 obj:Destroy()
