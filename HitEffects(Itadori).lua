@@ -75,29 +75,6 @@ if enabled and LocalPlayer then
                     local comboValue = tonumber(character:GetAttribute("Combo")) or 2
                     local attachTarget = Instance.new("Attachment", targetRoot)
                     local toClean = {attachTarget}
-                    
-                    local e2 = Instance.new("ParticleEmitter", attachTarget)
-                    e2.Name = "Dusty Impact"
-                    e2.Texture = "rbxassetid://10198439352"
-                    e2.Color = ColorSequence.new(Color3.new(0.45490196347236633,0.572549045085907,1))
-                    e2.Size = NumberSequence.new(2.5990726947784424)
-                    e2.ZOffset = 2
-                    e2.EmissionDirection = Enum.NormalId.Top
-                    e2.Lifetime = NumberRange.new(0.1)
-                    e2.Rate = 10
-                    e2.Speed = NumberRange.new(0.025990726426243782)
-                    e2.Rotation = NumberRange.new(-360, 360)
-                    e2.SpreadAngle = Vector2.new(-360, 360)
-                    e2.LockedToPart = true
-                    e2.Orientation = Enum.ParticleOrientation.VelocityPerpendicular
-                    e2.Shape = Enum.ParticleEmitterShape.Box
-                    e2.ShapeInOut = Enum.ParticleEmitterShapeInOut.Outward
-                    e2.ShapeStyle = Enum.ParticleEmitterShapeStyle.Volume
-                    e2.FlipbookMode = Enum.ParticleFlipbookMode.OneShot
-                    e2.FlipbookFramerate = NumberRange.new(1)
-                    e2.FlipbookLayout = Enum.ParticleFlipbookLayout.Grid4x4
-                    e2.Brightness = 5
-                    e2:Emit(50)
 
                     if comboValue == 5 then
                         local l1 = Instance.new("ParticleEmitter", attachTarget)
@@ -209,33 +186,11 @@ if enabled and LocalPlayer then
                     end
 
                     for _, att in ipairs(handAttachments) do
-                        local e1 = Instance.new("ParticleEmitter", att)
-                        e1.Name = "Circular Smack"
-                        e1.Texture = "rbxassetid://18140248952"
-                        e1.Color = ColorSequence.new(Color3.new(0.45490196347236633,0.572549045085907,1))
-                        e1.Size = NumberSequence.new(1.2)
-                        e1.ZOffset = 2
-                        e1.EmissionDirection = Enum.NormalId.Top
-                        e1.Lifetime = NumberRange.new(0.1, 0.2)
-                        e1.Rate = 10
-                        e1.Speed = NumberRange.new(0.025990726426243782)
-                        e1.Rotation = NumberRange.new(-360, 360)
-                        e1.SpreadAngle = Vector2.new(-360, 360)
-                        e1.LockedToPart = true
-                        e1.Orientation = Enum.ParticleOrientation.VelocityPerpendicular
-                        e1.Shape = Enum.ParticleEmitterShape.Box
-                        e1.ShapeInOut = Enum.ParticleEmitterShapeInOut.Outward
-                        e1.ShapeStyle = Enum.ParticleEmitterShapeStyle.Volume
-                        e1.FlipbookMode = Enum.ParticleFlipbookMode.OneShot
-                        e1.FlipbookFramerate = NumberRange.new(1)
-                        e1.FlipbookLayout = Enum.ParticleFlipbookLayout.Grid4x4
-                        e1.Brightness = 5
-
                         local e3 = Instance.new("ParticleEmitter", att)
                         e3.Name = "Shockreal"
                         e3.Texture = "rbxassetid://124692159307028"
                         e3.Color = ColorSequence.new(Color3.new(0.2235294133424759,0.3019607961177826,1))
-                        e3.Size = NumberSequence.new({NumberSequenceKeypoint.new(0,0.1,0),NumberSequenceKeypoint.new(0.106,1.08,0.2),NumberSequenceKeypoint.new(1,1.85,0)})
+                        e3.Size = NumberSequence.new({NumberSequenceKeypoint.new(0,0.05,0),NumberSequenceKeypoint.new(0.106,0.54,0.1),NumberSequenceKeypoint.new(1,0.92,0)})
                         e3.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0,1,0),NumberSequenceKeypoint.new(0.065,0,0),NumberSequenceKeypoint.new(0.430,0.070,0),NumberSequenceKeypoint.new(0.663,0.118,0),NumberSequenceKeypoint.new(0.830,0.177,0),NumberSequenceKeypoint.new(1,1,0)})
                         e3.ZOffset = 2
                         e3.EmissionDirection = Enum.NormalId.Front
@@ -264,7 +219,7 @@ if enabled and LocalPlayer then
                         eAura.Name = "Aura"
                         eAura.Texture = "rbxassetid://9285330517"
                         eAura.Color = ColorSequence.new(Color3.new(0.33725491166114807,0.7137255072593689,1))
-                        eAura.Size = NumberSequence.new({NumberSequenceKeypoint.new(0,4.894,0.914),NumberSequenceKeypoint.new(0.360,1.627,0.659),NumberSequenceKeypoint.new(0.706,1.328,0.462),NumberSequenceKeypoint.new(0.868,0.830,0.284),NumberSequenceKeypoint.new(1,0.498,0)})
+                        eAura.Size = NumberSequence.new({NumberSequenceKeypoint.new(0,2.4,0.4),NumberSequenceKeypoint.new(0.360,0.8,0.3),NumberSequenceKeypoint.new(0.706,0.6,0.2),NumberSequenceKeypoint.new(0.868,0.4,0.1),NumberSequenceKeypoint.new(1,0.25,0)})
                         eAura.ZOffset = 1
                         eAura.EmissionDirection = Enum.NormalId.Top
                         eAura.Lifetime = NumberRange.new(0.1,0.2)
@@ -281,7 +236,6 @@ if enabled and LocalPlayer then
                         eAura.FlipbookLayout = Enum.ParticleFlipbookLayout.Grid4x4
                         eAura.Brightness = 4
 
-                        e1:Emit(50)
                         e3:Emit(50)
                         eAura:Emit(50)
                     end
